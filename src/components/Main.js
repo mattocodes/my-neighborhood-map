@@ -88,7 +88,6 @@ class Main extends Component {
 
 
     render() {
-        console.log(this.state.locations)
         return (
             <div className="main">
                 <Map locations={this.state.locations} />

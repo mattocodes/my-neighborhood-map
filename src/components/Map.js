@@ -58,7 +58,12 @@ class Map extends Component {
         this.removeMarkers();
         this.insertMarkers(this.props.locations);
         return (
-            <div id="map"></div>
+            <div 
+                id="map" 
+                aria-label="map" 
+                role="application"
+            >
+            </div>
             
         )
     }
