@@ -32,13 +32,42 @@ class Main extends Component {
      
     }
 
+    /**
+     * Identifies marker on map and shows marker's infowindow 
+     * based on clicked locations on the Sidebar
+     * 
+     */
+    identifyMarker(location) {
+        for (let i=0; i < window.markers.length; i++) {
+            if (location.venue.id === window.markers[i].title) {
+                window.infowindow.setContent(     
+                    `<div className="infoWindow">
+                        <h3> 
+                            ${location.venue.name}
+                        </h3>
+                        <p>${location.venue.location.address} </p>
+                    </div>
+                    `
+                )
+
+                window.infowindow.open(window.mapObject, window.markers[i]);
+            }
+        }
+
+        
+
+    }
+
 
     render() {
         console.log(this.state.locations)
         return (
             <div className="main">
                 <Map locations={this.state.locations} />
-                <Sidebar locations={this.state.locations} />
+                <Sidebar 
+                    locations={this.state.locations}
+                    identifyMarker={this.identifyMarker} 
+                />
             </div>
         )
     }

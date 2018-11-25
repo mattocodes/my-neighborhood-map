@@ -17,6 +17,7 @@ class Sidebar extends Component {
                             <li key={index} className="list-item">
                                 <button 
                                     type="button"
+                                    onClick={() => this.props.identifyMarker(item)}
                                 >
                                     {item.venue.name}
                                 </button>

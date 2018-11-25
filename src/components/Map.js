@@ -14,7 +14,8 @@ class Map extends Component {
                         lat: locations[i].venue.location.lat,
                         lng: locations[i].venue.location.lng
                     },
-                    map: window.mapObject
+                    map: window.mapObject,
+                    title: locations[i].venue.id
                 });
 
                 // Add Event Listener for Info Window
