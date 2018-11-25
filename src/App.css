@@ -3,5 +3,17 @@
 }
 
 #map {
-  height: 100vh;
+  height: 50vh;
+ 
+}
+
+.sidebar {
+  height: 50vh;
+  background-color: lightblue;
+  
+}
+
+.sidebar p {
+  margin-top: 0;
+
 }

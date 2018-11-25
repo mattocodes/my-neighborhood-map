@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
 
 class App extends Component {
 
@@ -14,7 +16,7 @@ class App extends Component {
   /**
    * Gets the first script element on page, 
    * creates a script element and inserts it
-   * the first script element on page
+   * before the first script element on page
    */
   insertScript() {
     let script = this.createScript();
@@ -40,8 +42,9 @@ class App extends Component {
     this.insertScript();
     
     return (
-      <div className="App" id="map">
-
+      <div className="App">
+        <Header />
+        <Main />
       </div>
     );
   }
