@@ -37,8 +37,8 @@ class Main extends Component {
         console.log(this.state.locations)
         return (
             <div className="main">
-                <Map />
-                <Sidebar />
+                <Map locations={this.state.locations} />
+                <Sidebar locations={this.state.locations} />
             </div>
         )
     }
