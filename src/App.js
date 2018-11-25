@@ -18,8 +18,9 @@ class App extends Component {
    */
   insertScript() {
     let script = this.createScript();
-    let firstScriptElem = document.getElementsByTagName("script")[0];
+    let firstScriptElem = window.document.getElementsByTagName("script")[0];
     firstScriptElem.parentNode.insertBefore(script, firstScriptElem);
+    window.initMap = this.initMap;
 
   }
 
