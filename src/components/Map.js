@@ -1,7 +1,51 @@
 import React, { Component } from 'react';
 
 class Map extends Component {
+
+    markers = [];
+    infowindow;
+
+    insertMarkers = locations => {
+        if (window.google) {
+            this.infowindow = new window.google.maps.InfoWindow();
+            for (let i = 0; i < locations.length; i++) {
+                let marker = new window.google.maps.Marker({
+                    position: {
+                        lat: locations[i].venue.location.lat,
+                        lng: locations[i].venue.location.lng
+                    },
+                    map: window.mapObject
+                });
+
+                // Add Event Listener for Info Window
+                marker.addListener('click', () => {
+                    // Set Info Window Content
+                    this.infowindow.setContent(
+                        `<div className="infoWindow">
+                            <h3> 
+                                ${locations[i].venue.name}
+                            </h3>
+                            <p>
+                                ${locations[i].venue.location.address} <br/> <br/>
+                                ${locations[i].venue.location.city}, 
+                                ${locations[i].venue.location.state}
+                            
+                            </p>
+                        </div>
+                        `
+                    )
+                    this.infowindow.open(window.mapObject, marker);
+                });
+
+                this.markers.push(marker)
+            }
+            window.markers = this.markers;
+            window.infowindow = this.infowindow; 
+        }
+    }
+
     render() {
+        this.insertMarkers(this.props.locations)
         return (
             <div id="map"></div>
             

@@ -11,6 +11,7 @@ class App extends Component {
       center: mesquite,
       zoom: 12
     });
+    window.mapObject = map;
   }
 
   /**
