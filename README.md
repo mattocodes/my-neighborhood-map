@@ -1,44 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Neighborhood Map App
 
-## Available Scripts
+This is the final project for Udacity's Front-End Nanodegree program. The goal of this project was to create a single page web app featuring locations within my neighborhood on a map. The project emphasizes the use of React and third-party APIs such as Google Maps API and Foursquare Places API to code the app. Furthermore, the project incorporates other programming concepts learned so far such as responsive design, web accessibility, and offline first web principles.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+To get started with My Neighborhood Map App:
 
-### `npm test`
+* clone or download the files by clicking on the green "Clone or download" button at the top of this page
+* install all project dependencies with `npm install`
+* start the server with `npm start`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Folder Structure
+```bash
+├── README.md - This file.
+├── package.json # npm package manager file. 
+├── public
+│   ├── favicon.ico # React Icon.
+│   └── index.html # Contains the root div
+└── src
+    ├── Components # Folder that contains web app components
+    │   ├── Header.js # Contains web page header
+    │   ├── Main.js # Manages app's state information & contains the Sidebar & Map components
+    │   ├── Map.js # Contains map information
+    │   └── Sidebar.js # Contains a list of location data
+    ├── App.css # Contains styles for the app.
+    ├── App.js # This is the root JS file for the app.
+    ├── App.test.js # Used for testing. Provided with Create React App.
+    ├── index.css # Global styles.
+    ├── index.js # It is used for DOM rendering only
+    ├── logo.svg # React logo. Provided with Create React App   
+    └── serviceWorker.js # Used for offline website viewing. Provided with Create React App  
+    
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Important
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Service worker was enabled for this project. However, service worker will only work in production build not in development build. You may run the app in production build by doing the following:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* at the terminal, enter `npm run build`
+* and then, `server -s build`
+* in your browser, type: `localhost:5000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Credits
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project made use of [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) to display the map and also [Foursquare Places API](https://developer.foursquare.com/docs/api) to get location data that were used on the map. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+
+
+## License
+
+The contents of this repository are covered under the [MIT Licence](#)

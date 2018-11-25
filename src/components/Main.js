@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import Map from './Map';
 import Sidebar from './Sidebar';
 
+/**
+ * Code inspired by Kenny's walkthrough 
+ * video (https://www.youtube.com/watch?v=CCv8JrGVgYQ)
+ * 
+ */
+
 class Main extends Component {
     state = {
         locations: [],
@@ -15,7 +21,11 @@ class Main extends Component {
             
     }
 
-    //Get Location Data
+    /**
+     * Get Location Data
+     * This makes use of Foursquare Places API to 
+     * get location data
+     */
     getLocations () {
         const CLIENT_ID = 'LHRJUNUIFH3UXQAWKMUJLAJC3KRLOINLS3RHITDV4FLYDW43',
             CLIENT_SECRET = 'LULHSUFNWDBQ32BMINI54Y2SYNJM342DGTNBWDG0XCA0P5QW',

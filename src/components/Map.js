@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+/**
+ * Code inspired by Kenny's walkthrough 
+ * video (https://www.youtube.com/watch?v=CCv8JrGVgYQ)
+ * 
+ */
+
 class Map extends Component {
 
     markers = [];
