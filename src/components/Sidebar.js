@@ -6,7 +6,7 @@ class Sidebar extends Component {
 
         return (
             <div className="sidebar">
-                <h4>Places To Munch</h4>       
+                <h4>Places To Munch</h4>     
                 <input 
                     type="text"
                     placeholder="Filter Locations" 
