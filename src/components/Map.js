@@ -15,7 +15,8 @@ class Map extends Component {
                         lng: locations[i].venue.location.lng
                     },
                     map: window.mapObject,
-                    title: locations[i].venue.id
+                    title: locations[i].venue.id,
+                    animation: window.google.maps.Animation.DROP
                 });
 
                 // Add Event Listener for Info Window

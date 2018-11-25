@@ -52,6 +52,15 @@ class Main extends Component {
                     `
                 )
 
+                // Bounce Marker Animation
+                // Set All Marker Animation to Null
+                for (let j = 0; j < window.markers.length; j++){
+                    window.markers[j].setAnimation(null);
+                }
+                
+                // Set Marker Animation to Bounce
+                window.markers[i].setAnimation(window.google.maps.Animation.BOUNCE);
+
                 window.infowindow.open(window.mapObject, window.markers[i]);
             }
         }
