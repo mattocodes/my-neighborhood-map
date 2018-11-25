@@ -4,12 +4,14 @@ import Sidebar from './Sidebar';
 
 class Main extends Component {
     state = {
-        locations: []
+        locations: [],
+        allLocations: [],
+        query: ""
     }
 
     componentDidMount() {
         this.getLocations()
-            .then(response => this.setState( {locations: response} ))
+            .then(response => this.setState( {locations: response, allLocations: response} ))
             
     }
 
@@ -59,6 +61,23 @@ class Main extends Component {
     }
 
 
+
+    getQueryValue = (query) => {
+        this.setState( {query} );
+        if (query) {
+            this.setState({locations: this.filterLocations(query, this.state.locations)})
+        } else {
+            this.setState( {locations: this.state.allLocations} )
+        }
+
+    }
+
+    filterLocations = (query, locations) => {
+        return locations.filter(location => location.venue.name.toLowerCase().includes(query.toLowerCase()));
+
+    }
+
+
     render() {
         console.log(this.state.locations)
         return (
@@ -66,7 +85,9 @@ class Main extends Component {
                 <Map locations={this.state.locations} />
                 <Sidebar 
                     locations={this.state.locations}
-                    identifyMarker={this.identifyMarker} 
+                    identifyMarker={this.identifyMarker}
+                    query={this.state.query}
+                    getQueryValue = {this.getQueryValue} 
                 />
             </div>
         )
