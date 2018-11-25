@@ -45,8 +45,17 @@ class Map extends Component {
         }
     }
 
+    //Removes Markers
+    removeMarkers = () => {
+        for (let i = 0; i < this.markers.length; i++) {
+            this.markers[i].setMap(null);
+        }
+    }
+
+
     render() {
-        this.insertMarkers(this.props.locations)
+        this.removeMarkers();
+        this.insertMarkers(this.props.locations);
         return (
             <div id="map"></div>
             
